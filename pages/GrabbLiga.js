@@ -13,7 +13,7 @@ import Layout from '../components/layout'
 import { grabbar } from '../lib/data'
 //import 'react-datepicker/dist/react-datepicker.css'
 import DatePicker from 'react-datepicker'
-import grabbLiga from '../styles/GrabbLiga.module.css'
+import grabbLiga from '../styles/grabbLiga.module.css'
 //import { GrabbModel } from "./GrabbModel";
 
 class GrabbLiga extends Component {
