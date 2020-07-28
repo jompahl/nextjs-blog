@@ -2,7 +2,7 @@ import React from 'react'
 import { Grabb } from '../lib/Grabb'
 import { grabbar } from '../lib/data'
 import grabbStyle from '../styles/grabbar.module.css'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 const grabb0 = grabbar[0]
 const grabb1 = grabbar[1]

@@ -4,7 +4,7 @@ import Header from './Header'
 import Footer from './Footer'
 import Timer from './Timer'
 import style from '../styles/ticTacToe.module.css'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 function checkWinner(board) {
   const moves = [

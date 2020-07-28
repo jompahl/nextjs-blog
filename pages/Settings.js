@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 import TicTacToe from './TicTacToe'
 import { Button, TextInputField, Pane, SelectField } from 'evergreen-ui'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 class Settings extends Component {
   constructor(props) {

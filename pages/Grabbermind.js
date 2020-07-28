@@ -6,7 +6,7 @@ import { Button, Icon, InfoSignIcon, Tooltip, toaster } from 'evergreen-ui'
 import { Position } from 'evergreen-ui/commonjs/constants'
 import TimerGrabberMind from './TimerGrabberMind'
 import { IconButton } from 'evergreen-ui/commonjs/buttons'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 import mind from '../styles/grabberMind.module.css'
 
