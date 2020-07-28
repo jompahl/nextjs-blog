@@ -1,0 +1,82 @@
+.grabbCardContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.card {
+  background: url(../lib/empty-card.png);
+  /* background: url(./card.jpg); */
+  height: 651px;
+  width: 429px;
+  background-size: contain;
+  background-repeat: no-repeat;
+  font-family: 'din pro';
+  font-weight: bold;
+  font-size: 35px;
+  position: relative;
+}
+
+.attribute {
+  display: flex;
+  line-height: 45px;
+  width: 146px;
+}
+
+.score {
+  position: absolute;
+  top: 420px;
+  width: 366px;
+  left: 50%;
+  transform: translateX(-50%);
+  height: 160px;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  align-items: center;
+}
+
+.Name {
+  position: absolute;
+  top: 348px;
+  left: 18px;
+  font-size: 49px;
+  letter-spacing: 2px;
+  width: 393px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
+.value {
+  font-size: 45px;
+  font-weight: bold;
+  margin-right: 12px;
+}
+
+.shortName {
+  font-size: 45px;
+  font-weight: normal;
+}
+
+.total {
+  top: 67px;
+  left: 75px;
+  position: absolute;
+  font-size: 80px;
+}
+
+.TotalText {
+  top: 149px;
+  left: 80px;
+  position: absolute;
+  font-size: 47px;
+  font-weight: normal;
+}
+
+.DownText {
+  top: 574px;
+  left: 185px;
+  position: absolute;
+  font-size: 27px;
+  npfont-weight: normal;
+}

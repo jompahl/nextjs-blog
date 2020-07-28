@@ -1,0 +1,76 @@
+.RiddleBoard {
+  border: 1px solid black;
+  box-shadow: 0 1px 14px 4px rgba(0, 0, 0, 0.4);
+  display: -webkit-flex;
+  display: flex;
+
+  flex-wrap: wrap;
+  width: 100%;
+  max-width: 800px;
+  border-radius: 6px;
+  height: 80%;
+}
+
+@media screen and (max-width: 400px) {
+  .RiddleBoard {
+    height: 60%;
+  }
+}
+
+.Riddlesquare {
+  font-size: 10px;
+  width: 20%;
+  height: 20%;
+  box-sizing: border-box;
+}
+
+.houseNumber {
+  display: -webkit-flex;
+  display: flex;
+
+  justify-content: space-around;
+  width: 100%;
+  max-width: 800px;
+  padding-bottom: 10px;
+}
+
+.riddleScreen {
+  display: flex;
+  flex-direction: row;
+}
+
+.houseInfo {
+  display: -webkit-flex;
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-around;
+  height: 602px;
+  padding-top: 39px;
+
+  align-items: center;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.centerRiddle {
+  display: flex;
+
+  flex-direction: column;
+  padding-top: 10px;
+  height: 100%;
+  align-items: center;
+  padding: 5px;
+  height: 100%;
+}
+
+.infoList {
+  display: -webkit-flex;
+  display: flex;
+  flex-direction: column;
+
+  height: 100%;
+  width: 100%;
+
+  padding: 20px;
+}
