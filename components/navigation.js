@@ -50,10 +50,10 @@ class Navigation extends Component {
 
         <div className={navStyle.navigationButtons}>
           <Link href='/'>Start</Link>
-          <Link href='/grabbar'>Grabbar</Link>
-          <Link href='/grabbliga'>GrabbLiga</Link>
-          <Link href='/settings'>Tic Tac Toe</Link>
-          <Link href='/riddle'>GrabbGåta</Link>
+          <Link href='/Grabbar'>Grabbar</Link>
+          <Link href='/Grabbliga'>GrabbLiga</Link>
+          <Link href='/Settings'>Tic Tac Toe</Link>
+          <Link href='/Riddle'>GrabbGåta</Link>
           <Link href='/SettingsGrabberMind'>Grabbermind</Link>
         </div>
         <SideDrawer show={this.state.sideDrawerOpen} />

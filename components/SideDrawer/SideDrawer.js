@@ -20,16 +20,16 @@ const sideDrawer = (props) => {
           <Link href='/'>Start</Link>
         </li>
         <li>
-          <Link href='/grabbar'>Grabbar</Link>
+          <Link href='/Grabbar'>Grabbar</Link>
         </li>
         <li>
-          <Link href='/grabbliga'>GrabbLiga</Link>
+          <Link href='/Grabbliga'>GrabbLiga</Link>
         </li>
         <li>
-          <Link href='/settings'>Tic Tac Toe</Link>
+          <Link href='/Settings'>Tic Tac Toe</Link>
         </li>
         <li>
-          <Link href='/riddle'>GrabbGåta</Link>
+          <Link href='/Riddle'>GrabbGåta</Link>
         </li>
         <li>
           <Link href='/SettingsGrabberMind'>Grabbermind</Link>
