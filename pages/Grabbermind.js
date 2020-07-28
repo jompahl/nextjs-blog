@@ -17,7 +17,7 @@ class Grabbermind extends Component {
     super(props)
 
     this.state = {
-      table: Array(parseInt(this.props.nbrOfRows * 4)).fill(''),
+      table: Array(parseInt(/*this.props.nbrOfRows * 4*/ 32)).fill(''),
       buttons: [
         'Red',
         'Green',
@@ -54,12 +54,12 @@ class Grabbermind extends Component {
 
     let tmpArray = this.getSecretCode()
 
-    if (!this.props.allowDuplicates) {
-      while (this.checkForDublicates(tmpArray)) {
-        console.log('inside whilelopop')
-        tmpArray = this.getSecretCode()
-      }
-    }
+    // if (/*!this.props.allowDuplicates*/) {
+    //   while (this.checkForDublicates(tmpArray)) {
+    //     console.log('inside whilelopop')
+    //     tmpArray = this.getSecretCode()
+    //   }
+    // }
 
     console.log(tmpArray)
     this.setState({ colorArray: tmpArray })
@@ -86,7 +86,8 @@ class Grabbermind extends Component {
 
     for (let i = 0; i < colorArray.length; i++) {
       console.log('heaalå')
-      colorArray[i] = buttons[this.getRandomInt(0, this.props.nbrOfColors - 1)]
+      colorArray[i] =
+        buttons[this.getRandomInt(0, /*this.props.nbrOfColors - 1*/ 7)]
     }
 
     return colorArray
@@ -276,7 +277,7 @@ class Grabbermind extends Component {
             style={{ visibility: didWin ? 'visible' : 'hidden' }}
           >
             <div>
-              Congratulations!! {this.props.playerName} Your score is:
+              Congratulations!! {/*this.props.playerName*/} Your score is:
               {didWin ? ' ' + this.timeDifference(new Date()) : 'bajs'}
             </div>
             <button
@@ -320,7 +321,7 @@ class Grabbermind extends Component {
 
           <div
             className={mind.sideBar}
-            style={{ height: this.props.nbrOfRows * 60 }}
+            style={{ height: /*this.props.nbrOfRows*/ 8 * 60 }}
             data-tip={gameIsOn ? 'current row ' + (rowCount + 1) : ''}
             data-for='toolTip1'
             data-place='top'
@@ -351,7 +352,7 @@ class Grabbermind extends Component {
             />
             <div
               className={mind.grabberMindTable}
-              style={{ height: this.props.nbrOfRows * 60 }}
+              style={{ height: /*this.props.nbrOfRows*/ 8 * 60 }}
             >
               {table.map((value, index) => {
                 return (
@@ -369,7 +370,7 @@ class Grabbermind extends Component {
                         gridGap={10}
                       >
                         {buttons
-                          .slice(0, this.props.nbrOfColors)
+                          .slice(0, /*this.props.nbrOfColors*/ 8)
                           .map((value) => {
                             return (
                               <button
@@ -451,7 +452,7 @@ class Grabbermind extends Component {
 
           <div
             className={mind.sidebarResult}
-            style={{ height: parseInt(this.props.nbrOfRows) * 60 }}
+            style={{ height: parseInt(/*this.props.nbrOfRows*/ 8) * 60 }}
           >
             {' '}
             {correctedRows.map((row, index) => (
