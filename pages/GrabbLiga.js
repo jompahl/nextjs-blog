@@ -8,7 +8,7 @@ import {
   Popover,
   Pane,
 } from 'evergreen-ui'
-import Layout from '../components/Layout'
+import Layout from '../components/layout'
 
 import { grabbar } from '../lib/data'
 //import 'react-datepicker/dist/react-datepicker.css'
