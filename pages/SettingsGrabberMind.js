@@ -120,4 +120,12 @@ class SettingsGrabberMind extends Component {
   }
 }
 
+SettingsGrabberMind.defaultProps = {
+  playerName: '',
+  nbrOfColors: '4',
+  nbrOfRows: '15',
+  didstart: false,
+  allowDuplicates: true,
+}
+
 export default SettingsGrabberMind
