@@ -55,12 +55,13 @@
 
 .riddlesContainer {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   height: 100%;
-  margin-top: 30px;
+  padding: 20px;
+  flex-wrap: wrap;
 }
 
-@media (max-width: 1223px) {
+@media (max-width: 855px) {
   .riddlesContainer {
     display: flex;
     justify-content: space-between;
@@ -68,6 +69,7 @@
     margin-top: 30px;
     flex-direction: column;
     align-items: center;
+    flex-wrap: unset;
   }
 }
 

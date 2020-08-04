@@ -7,12 +7,12 @@ import styles from '../components/layout.module.css'
 export default function Riddles({ allPostsData }) {
   return (
     <div className={utilStyles.riddlesContainer}>
-      {allPostsData.map(({ id, date, title, time }) => (
+      {allPostsData.map(({ id, date, title, time, pic }) => (
         <div className={utilStyles.listItem}>
           <img
             className={utilStyles.picture}
             //style={{ height: 225, width: 400 }}
-            src='/images/einstein.jpg'
+            src={pic}
             width='400'
             height='225'
             //className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
