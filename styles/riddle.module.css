@@ -24,6 +24,12 @@
   box-sizing: border-box;
 }
 
+@media screen and (min-width: 577px) {
+  .Riddlesquare {
+    font-size: 19px;
+  }
+}
+
 .houseNumber {
   display: -webkit-flex;
   display: flex;
@@ -62,6 +68,7 @@
   align-items: center;
   padding: 5px;
   height: 100%;
+  margin-top: 30px;
 }
 
 .infoList {

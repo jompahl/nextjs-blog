@@ -44,8 +44,36 @@
 }
 
 .listItem {
-  margin: 0 0 1.25rem;
+  /* width: 20%;*/
+  min-height: 304px;
+  height: 35%;
+  border: 1px solid;
+  display: flex;
+  flex-direction: column;
+  margin-top: 20px;
 }
+
+.riddlesContainer {
+  display: flex;
+  justify-content: space-around;
+  height: 100%;
+  margin-top: 30px;
+}
+
+@media (max-width: 1223px) {
+  .riddlesContainer {
+    display: flex;
+    justify-content: space-between;
+    height: 100%;
+    margin-top: 30px;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+/* .picture {
+  height: 65%;
+} */
 
 .lightText {
   color: #999;

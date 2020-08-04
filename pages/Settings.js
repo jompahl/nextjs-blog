@@ -35,73 +35,71 @@ class Settings extends Component {
       return <TicTacToe {...this.state} />
     }
     return (
-      <Layout>
+      <Pane
+        display='flex'
+        alignItems='center'
+        flexDirection='column'
+        justifyContent='center'
+        marginTop={50}
+      >
         <Pane
+          width={600}
+          padding={20}
+          borderRadius={3}
+          border='default'
           display='flex'
-          alignItems='center'
           flexDirection='column'
-          justifyContent='center'
-          marginTop={50}
+          style={{ width: '95%', maxWidth: 650 }}
         >
-          <Pane
-            width={600}
-            padding={20}
-            borderRadius={3}
-            border='default'
-            display='flex'
-            flexDirection='column'
-            style={{ width: '95%', maxWidth: 650 }}
+          <TextInputField
+            label=' Player 1'
+            placeholder='Firstname Lastname'
+            value={player1Name}
+            onChange={(evt) => {
+              this.setState({ player1Name: evt.target.value })
+            }}
+          />
+          <TextInputField
+            label=' Player 2'
+            placeholder='Firstname Lastname'
+            value={player2Name}
+            onChange={(evt) => {
+              this.setState({ player2Name: evt.target.value })
+            }}
+          />
+          <TextInputField
+            type='number'
+            label='Time'
+            placeholder='10'
+            value={time}
+            onChange={(evt) => {
+              this.setState({ time: evt.target.value })
+            }}
+          />
+          <SelectField
+            label='Time increment'
+            value={increment}
+            onChange={(evt) => {
+              this.setState({ increment: evt.target.value })
+            }}
           >
-            <TextInputField
-              label=' Player 1'
-              placeholder='Firstname Lastname'
-              value={player1Name}
-              onChange={(evt) => {
-                this.setState({ player1Name: evt.target.value })
-              }}
-            />
-            <TextInputField
-              label=' Player 2'
-              placeholder='Firstname Lastname'
-              value={player2Name}
-              onChange={(evt) => {
-                this.setState({ player2Name: evt.target.value })
-              }}
-            />
-            <TextInputField
-              type='number'
-              label='Time'
-              placeholder='10'
-              value={time}
-              onChange={(evt) => {
-                this.setState({ time: evt.target.value })
-              }}
-            />
-            <SelectField
-              label='Time increment'
-              value={increment}
-              onChange={(evt) => {
-                this.setState({ increment: evt.target.value })
-              }}
+            {Array.from({ length: 11 }, (key, index) => (
+              <option key={index} value={index}>
+                {index}
+              </option>
+            ))}
+          </SelectField>
+          <Pane display='flex' justifyContent='flex-end'>
+            <Button
+              appearance='primary'
+              onClick={this.handleSubmit}
+              iconBefore='tick-circle'
             >
-              {Array.from({ length: 11 }, (key, index) => (
-                <option key={index} value={index}>
-                  {index}
-                </option>
-              ))}
-            </SelectField>
-            <Pane display='flex' justifyContent='flex-end'>
-              <Button
-                appearance='primary'
-                onClick={this.handleSubmit}
-                iconBefore='tick-circle'
-              >
-                Start Game
-              </Button>
-            </Pane>
+              Start Game
+            </Button>
           </Pane>
         </Pane>
-      </Layout>
+      </Pane>
     )
   }
 }

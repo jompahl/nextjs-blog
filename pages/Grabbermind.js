@@ -269,200 +269,194 @@ class Grabbermind extends Component {
     let disableHigh = rowCount * 4
 
     return (
-      <Layout>
-        <div className={mind.grabberMind}>
-          <div
-            className={mind.winningPage}
-            style={{ visibility: didWin ? 'visible' : 'hidden' }}
-          >
-            <div>
-              Congratulations!! {this.props.playerName} Your score is:
-              {didWin ? ' ' + this.timeDifference(new Date()) : 'bajs'}
-            </div>
-            <button
-              onClick={(event) => {
-                window.location.reload(true)
-              }}
-              style={{ opacity: 1, padding: 20, marginTop: 20 }}
-            >
-              Play Again
-            </button>
+      <div className={mind.grabberMind}>
+        <div
+          className={mind.winningPage}
+          style={{ visibility: didWin ? 'visible' : 'hidden' }}
+        >
+          <div>
+            Congratulations!! {this.props.playerName} Your score is:
+            {didWin ? ' ' + this.timeDifference(new Date()) : 'bajs'}
           </div>
-          <div
-            className={mind.winningPage}
-            style={{ visibility: didLose ? 'visible' : 'hidden' }}
-          >
-            Sorry you did not get the code, the correct code was
-            <div style={{ display: 'flex', flexDirection: 'row' }}>
-              {this.state.colorArray.map((value, index) => {
-                return (
-                  <div
-                    style={{
-                      width: 40,
-                      height: 40,
-                      borderRadius: '50%',
-                      backgroundColor: value,
-                      margin: 5,
-                    }}
-                  ></div>
-                )
-              })}
-            </div>
-            <button
-              onClick={(event) => {
-                window.location.reload(true)
-              }}
-              style={{ opacity: 1, padding: 20, marginTop: 20 }}
-            >
-              Play Again
-            </button>
-          </div>
-
-          <div
-            className={mind.sideBar}
-            style={{ height: this.props.nbrOfRows * 60 }}
-            data-tip={gameIsOn ? 'current row ' + (rowCount + 1) : ''}
-            data-for='toolTip1'
-            data-place='top'
-          >
-            {' '}
-            {correctedRows.map((row, index) => (
-              <div className={mind.sidebarResults} key={index}>
-                {this.getArrow(index)}
-              </div>
-            ))}
-            <ReactToolTip id='toolTip1' />
-          </div>
-          <div
-            style={{
-              display: 'flex',
-              flexDirection: 'column',
-              alignItems: 'center',
-              marginTop: 20,
+          <button
+            onClick={(event) => {
+              window.location.reload(true)
             }}
+            style={{ opacity: 1, padding: 20, marginTop: 20 }}
           >
-            <TimerGrabberMind
-              seconds={0}
-              isRunning={gameIsOn}
-              didWin={didWin}
-              onGameEnded={() => {
-                this.onGameEnded()
-              }}
-            />
-            <div
-              className={mind.grabberMindTable}
-              style={{ height: this.props.nbrOfRows * 60 }}
-            >
-              {table.map((value, index) => {
-                return (
-                  <Popover
-                    key={index}
-                    position={Position.TOP}
-                    content={({ close }) => (
-                      <Pane
-                        minWidth={174}
-                        className={mind.popover}
-                        background='white'
-                        paddingY={0}
-                        display='grid'
-                        gridTemplateColumns='repeat(4, auto)'
-                        gridGap={10}
-                      >
-                        {buttons
-                          .slice(0, this.props.nbrOfColors)
-                          .map((value) => {
-                            return (
-                              <button
-                                className={mind.popoverButton}
-                                key={value}
-                                style={{
-                                  background: value,
-                                  borderradius: '50%',
-                                  border: '2px solid rgba(0, 0, 0, .2)',
-                                  height: 30,
-                                  width: 30,
-                                  margin: 5,
-                                }}
-                                onClick={(event) => {
-                                  this.changeColor(value, index)
-                                }}
-                              />
-                            )
-                          })}
-                      </Pane>
-                    )}
-                  >
-                    <Button
-                      className={mind.button}
-                      justifyContent='center'
-                      alignItems='center'
-                      height={60}
-                      //width='25%'
-                      disabled={
-                        gameIsOn
-                          ? index >= disableLow || index < disableHigh
-                          : 'none'
-                      }
-                      style={{
-                        position: 'absolute',
-                        left: 60 * (index % 4),
-                        bottom: 60 * Math.floor(index / 4),
-                        width: '25%',
-                      }}
-                    >
-                      <Pane
-                        background={value}
-                        flex='0 0 50px'
-                        borderRadius='50%'
-                        justifySelf='center'
-                        height={50}
-                        width={50}
-                        style={{
-                          border: value
-                            ? '2px solid rgba(0, 0, 0, .2)'
-                            : 'none',
-                        }}
-                      />
-                    </Button>
-                  </Popover>
-                )
-              })}
-            </div>{' '}
-            <div className={mind.buttonHolder} style={{ paddingBottom: 30 }}>
-              <IconButton icon='settings' size={22} />
-              <Button
-                onClick={(event) => {
-                  this.checkRow()
-                }}
-              >
-                Check row
-              </Button>
-              <Button
-                onClick={(event) => {
-                  this.startGame()
-                }}
-              >
-                {!gameIsOn ? 'Start Game' : 'restart'}
-              </Button>{' '}
-            </div>
-            <text style={{ marginTop: 5 }}></text>
-          </div>
-          {}
-
-          <div
-            className={mind.sidebarResult}
-            style={{ height: parseInt(this.props.nbrOfRows) * 60 }}
-          >
-            {' '}
-            {correctedRows.map((row, index) => (
-              <div className={mind.sidebarResults} key={index}>
-                {' '}
-                <Result results={row} />{' '}
-              </div>
-            ))}
-          </div>
+            Play Again
+          </button>
         </div>
-      </Layout>
+        <div
+          className={mind.winningPage}
+          style={{ visibility: didLose ? 'visible' : 'hidden' }}
+        >
+          Sorry you did not get the code, the correct code was
+          <div style={{ display: 'flex', flexDirection: 'row' }}>
+            {this.state.colorArray.map((value, index) => {
+              return (
+                <div
+                  style={{
+                    width: 40,
+                    height: 40,
+                    borderRadius: '50%',
+                    backgroundColor: value,
+                    margin: 5,
+                  }}
+                ></div>
+              )
+            })}
+          </div>
+          <button
+            onClick={(event) => {
+              window.location.reload(true)
+            }}
+            style={{ opacity: 1, padding: 20, marginTop: 20 }}
+          >
+            Play Again
+          </button>
+        </div>
+
+        <div
+          className={mind.sideBar}
+          style={{ height: this.props.nbrOfRows * 60 }}
+          data-tip={gameIsOn ? 'current row ' + (rowCount + 1) : ''}
+          data-for='toolTip1'
+          data-place='top'
+        >
+          {' '}
+          {correctedRows.map((row, index) => (
+            <div className={mind.sidebarResults} key={index}>
+              {this.getArrow(index)}
+            </div>
+          ))}
+          <ReactToolTip id='toolTip1' />
+        </div>
+        <div
+          style={{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            marginTop: 20,
+          }}
+        >
+          <TimerGrabberMind
+            seconds={0}
+            isRunning={gameIsOn}
+            didWin={didWin}
+            onGameEnded={() => {
+              this.onGameEnded()
+            }}
+          />
+          <div
+            className={mind.grabberMindTable}
+            style={{ height: this.props.nbrOfRows * 60 }}
+          >
+            {table.map((value, index) => {
+              return (
+                <Popover
+                  key={index}
+                  position={Position.TOP}
+                  content={({ close }) => (
+                    <Pane
+                      minWidth={174}
+                      className={mind.popover}
+                      background='white'
+                      paddingY={0}
+                      display='grid'
+                      gridTemplateColumns='repeat(4, auto)'
+                      gridGap={10}
+                    >
+                      {buttons.slice(0, this.props.nbrOfColors).map((value) => {
+                        return (
+                          <button
+                            className={mind.popoverButton}
+                            key={value}
+                            style={{
+                              background: value,
+                              borderradius: '50%',
+                              border: '2px solid rgba(0, 0, 0, .2)',
+                              height: 30,
+                              width: 30,
+                              margin: 5,
+                            }}
+                            onClick={(event) => {
+                              this.changeColor(value, index)
+                            }}
+                          />
+                        )
+                      })}
+                    </Pane>
+                  )}
+                >
+                  <Button
+                    className={mind.button}
+                    justifyContent='center'
+                    alignItems='center'
+                    height={60}
+                    //width='25%'
+                    disabled={
+                      gameIsOn
+                        ? index >= disableLow || index < disableHigh
+                        : 'none'
+                    }
+                    style={{
+                      position: 'absolute',
+                      left: 60 * (index % 4),
+                      bottom: 60 * Math.floor(index / 4),
+                      width: '25%',
+                    }}
+                  >
+                    <Pane
+                      background={value}
+                      flex='0 0 50px'
+                      borderRadius='50%'
+                      justifySelf='center'
+                      height={50}
+                      width={50}
+                      style={{
+                        border: value ? '2px solid rgba(0, 0, 0, .2)' : 'none',
+                      }}
+                    />
+                  </Button>
+                </Popover>
+              )
+            })}
+          </div>{' '}
+          <div className={mind.buttonHolder} style={{ paddingBottom: 30 }}>
+            <IconButton icon='settings' size={22} />
+            <Button
+              onClick={(event) => {
+                this.checkRow()
+              }}
+            >
+              Check row
+            </Button>
+            <Button
+              onClick={(event) => {
+                this.startGame()
+              }}
+            >
+              {!gameIsOn ? 'Start Game' : 'restart'}
+            </Button>{' '}
+          </div>
+          <text style={{ marginTop: 5 }}></text>
+        </div>
+        {}
+
+        <div
+          className={mind.sidebarResult}
+          style={{ height: parseInt(this.props.nbrOfRows) * 60 }}
+        >
+          {' '}
+          {correctedRows.map((row, index) => (
+            <div className={mind.sidebarResults} key={index}>
+              {' '}
+              <Result results={row} />{' '}
+            </div>
+          ))}
+        </div>
+      </div>
     )
   }
 }

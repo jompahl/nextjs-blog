@@ -44,88 +44,78 @@ class SettingsGrabberMind extends Component {
     }
 
     return (
-      <Layout>
+      <Pane
+        display='flex'
+        alignItems='center'
+        flexDirection='column'
+        justifyContent='center'
+        marginTop={50}
+      >
         <Pane
+          width={600}
+          padding={20}
+          borderRadius={3}
+          border='default'
           display='flex'
-          alignItems='center'
           flexDirection='column'
-          justifyContent='center'
-          marginTop={50}
+          style={{ width: '95%', maxWidth: 650 }}
         >
-          <Pane
-            width={600}
-            padding={20}
-            borderRadius={3}
-            border='default'
-            display='flex'
-            flexDirection='column'
-            style={{ width: '95%', maxWidth: 650 }}
+          <TextInputField
+            label=' Player name'
+            placeholder='Grabber name'
+            value={playerName}
+            onChange={(evt) => {
+              this.setState({ playerName: evt.target.value })
+            }}
+          />
+          <SelectField
+            type='number'
+            label='Chose number of colors'
+            value={nbrOfColors}
+            onChange={(evt) => {
+              this.setState({ nbrOfColors: evt.target.value })
+            }}
           >
-            <TextInputField
-              label=' Player name'
-              placeholder='Grabber name'
-              value={playerName}
-              onChange={(evt) => {
-                this.setState({ playerName: evt.target.value })
-              }}
-            />
-            <SelectField
-              type='number'
-              label='Chose number of colors'
-              value={nbrOfColors}
-              onChange={(evt) => {
-                this.setState({ nbrOfColors: evt.target.value })
-              }}
+            {Array.from({ length: 5 }, (key, index) => (
+              <option key={index} value={index + 4}>
+                {index + 4}
+              </option>
+            ))}
+          </SelectField>
+          <SelectField
+            label='Choose number of rows'
+            value={nbrOfRows}
+            onChange={(evt) => {
+              this.setState({ nbrOfRows: evt.target.value })
+            }}
+          >
+            {Array.from({ length: 11 }, (key, index) => (
+              <option key={index} value={index + 5}>
+                {index + 5}
+              </option>
+            ))}
+          </SelectField>
+          <Checkbox
+            style={{ marginLeft: 6 }}
+            label='Allow duplicates?'
+            checked={this.state.allowDuplicates}
+            onChange={(e) =>
+              this.setState({ allowDuplicates: e.target.checked })
+            }
+          />
+          <Pane display='flex' justifyContent='flex-end'>
+            <Button
+              appearance='primary'
+              onClick={this.handleSubmit}
+              iconBefore='tick-circle'
             >
-              {Array.from({ length: 5 }, (key, index) => (
-                <option key={index} value={index + 4}>
-                  {index + 4}
-                </option>
-              ))}
-            </SelectField>
-            <SelectField
-              label='Choose number of rows'
-              value={nbrOfRows}
-              onChange={(evt) => {
-                this.setState({ nbrOfRows: evt.target.value })
-              }}
-            >
-              {Array.from({ length: 11 }, (key, index) => (
-                <option key={index} value={index + 5}>
-                  {index + 5}
-                </option>
-              ))}
-            </SelectField>
-            <Checkbox
-              style={{ marginLeft: 6 }}
-              label='Allow duplicates?'
-              checked={this.state.allowDuplicates}
-              onChange={(e) =>
-                this.setState({ allowDuplicates: e.target.checked })
-              }
-            />
-            <Pane display='flex' justifyContent='flex-end'>
-              <Button
-                appearance='primary'
-                onClick={this.handleSubmit}
-                iconBefore='tick-circle'
-              >
-                Start Game
-              </Button>
-            </Pane>
+              Start Game
+            </Button>
           </Pane>
         </Pane>
-      </Layout>
+      </Pane>
     )
   }
-}
-
-SettingsGrabberMind.defaultProps = {
-  playerName: '',
-  nbrOfColors: '4',
-  nbrOfRows: '15',
-  didstart: false,
-  allowDuplicates: true,
 }
 
 export default SettingsGrabberMind

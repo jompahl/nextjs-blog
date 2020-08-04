@@ -95,94 +95,92 @@ class GrabbLiga extends Component {
     }
 
     return (
-      <Layout>
-        <div className={grabbLiga.grabbligaPage}>
-          <div className={grabbLiga.table}>
-            <Table>
-              <Table.Head>
-                <Table.TextHeaderCell>Grabb</Table.TextHeaderCell>
-                <Table.TextHeaderCell
+      <div className={grabbLiga.grabbligaPage}>
+        <div className={grabbLiga.table}>
+          <Table>
+            <Table.Head>
+              <Table.TextHeaderCell>Grabb</Table.TextHeaderCell>
+              <Table.TextHeaderCell
+                isSelectable
+                onSelect={() => this.setState({ winsSelected: true })}
+              >
+                Vinster
+              </Table.TextHeaderCell>
+              <Table.TextHeaderCell>Poäng</Table.TextHeaderCell>
+            </Table.Head>
+            <Table.Body height={480}>
+              {grabbar.map((grabb) => (
+                <Table.Row
+                  key={grabb.name}
                   isSelectable
-                  onSelect={() => this.setState({ winsSelected: true })}
+                  onSelect={() =>
+                    alert(
+                      'Du valde ' +
+                        grabb.name +
+                        ' han har vunnit ' +
+                        this.howManyWins(grabb) +
+                        ' gånger'
+                    )
+                  }
                 >
-                  Vinster
-                </Table.TextHeaderCell>
-                <Table.TextHeaderCell>Poäng</Table.TextHeaderCell>
-              </Table.Head>
-              <Table.Body height={480}>
-                {grabbar.map((grabb) => (
-                  <Table.Row
-                    key={grabb.name}
-                    isSelectable
-                    onSelect={() =>
-                      alert(
-                        'Du valde ' +
-                          grabb.name +
-                          ' han har vunnit ' +
-                          this.howManyWins(grabb) +
-                          ' gånger'
-                      )
-                    }
-                  >
-                    <Table.TextCell>{grabb.name}</Table.TextCell>
-                    <Table.TextCell>{this.howManyWins(grabb)}</Table.TextCell>
-                    <Table.TextCell isNumber>
-                      {this.howManyPoints(grabb)}
-                    </Table.TextCell>
-                  </Table.Row>
-                ))}
-              </Table.Body>
-            </Table>
-          </div>
-          <div className={grabbLiga.addScore}>
-            <Popover
-              content={({ close }) => (
-                <Pane
-                  width={320}
-                  height={320}
-                  paddingX={40}
-                  display='flex'
-                  alignItems='center'
-                  justifyContent='center'
-                  flexDirection='column'
-                >
-                  <Combobox
-                    items={grabbar.map((grabb) => grabb.name)}
-                    placeholder='Grabb'
-                    onChange={(selected) => this.setState({ grabb: selected })}
-                  />
-                  <Combobox
-                    items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
-                    placeholder='Poäng'
-                    onChange={(selected) => this.setState({ points: selected })}
-                  />
-                  {/*<DatePicker
+                  <Table.TextCell>{grabb.name}</Table.TextCell>
+                  <Table.TextCell>{this.howManyWins(grabb)}</Table.TextCell>
+                  <Table.TextCell isNumber>
+                    {this.howManyPoints(grabb)}
+                  </Table.TextCell>
+                </Table.Row>
+              ))}
+            </Table.Body>
+          </Table>
+        </div>
+        <div className={grabbLiga.addScore}>
+          <Popover
+            content={({ close }) => (
+              <Pane
+                width={320}
+                height={320}
+                paddingX={40}
+                display='flex'
+                alignItems='center'
+                justifyContent='center'
+                flexDirection='column'
+              >
+                <Combobox
+                  items={grabbar.map((grabb) => grabb.name)}
+                  placeholder='Grabb'
+                  onChange={(selected) => this.setState({ grabb: selected })}
+                />
+                <Combobox
+                  items={[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15]}
+                  placeholder='Poäng'
+                  onChange={(selected) => this.setState({ points: selected })}
+                />
+                {/*<DatePicker
                   selected={this.state.date}
                   onChange={(selected) => this.setState({ date: selected })}
                 />*/}
-                  <Checkbox
-                    label='Vinst'
-                    checked={win}
-                    onChange={(e) => this.setState({ win: e.target.checked })}
-                  />
-                  <Button
-                    className='submitScore'
-                    iconBefore='tick-circle'
-                    color='success'
-                    marginLeft={10}
-                    onClick={this.handleClick}
-                  >
-                    Sumbit
-                  </Button>
-                  <Button onClick={close}>Close</Button>
-                </Pane>
-              )}
-            >
-              <Button>Add Grabbscore</Button>
-            </Popover>
-          </div>
+                <Checkbox
+                  label='Vinst'
+                  checked={win}
+                  onChange={(e) => this.setState({ win: e.target.checked })}
+                />
+                <Button
+                  className='submitScore'
+                  iconBefore='tick-circle'
+                  color='success'
+                  marginLeft={10}
+                  onClick={this.handleClick}
+                >
+                  Sumbit
+                </Button>
+                <Button onClick={close}>Close</Button>
+              </Pane>
+            )}
+          >
+            <Button>Add Grabbscore</Button>
+          </Popover>
         </div>
-      </Layout>
+      </div>
     )
   }
 }

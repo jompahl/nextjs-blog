@@ -7,7 +7,7 @@ import Date from '../components/date'
 
 export default function Home({ allPostsData }) {
   return (
-    <Layout home>
+    <React.Fragment>
       <Head>…</Head>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
@@ -26,7 +26,7 @@ export default function Home({ allPostsData }) {
           ))}
         </ul>
       </section>
-    </Layout>
+    </React.Fragment>
   )
 }
 

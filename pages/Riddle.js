@@ -49,7 +49,7 @@ class Riddle extends Component {
     const houseNumber = this.state.houseNumber
 
     return (
-      <Layout>
+      <React.Fragment>
         <div className={riddleStyles.riddleScreen}></div>
         <div className={riddleStyles.centerRiddle}>
           <div className={riddleStyles.houseNumber}>
@@ -197,7 +197,7 @@ class Riddle extends Component {
             </li>
             <li>Fråga: Vem har en {table[23]} som husdjur?</li>
           </div>{*/}
-      </Layout>
+      </React.Fragment>
     )
   }
 }

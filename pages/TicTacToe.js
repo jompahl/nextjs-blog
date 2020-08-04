@@ -176,61 +176,59 @@ class TicTacToe extends Component {
     console.log(style)
 
     return (
-      <Layout>
-        <div id={style.game}>
-          <div className={style.timerContainer}>
-            {this.props.player1Name} is playing X
-            <Timer
-              key={gameId}
-              onTimerEnded={() => {
-                this.onTimerEnded('X')
-              }}
-              seconds={this.props.time}
-              increment={this.props.increment}
-              isRunning={!hasWinner && hasMoves && turn === 'X'}
-            />
-            games won: {xWonCount}
-          </div>
-          <div className={style.boardContainer}>
-            <Header totalMoves={totalMoves} />
-            {hasWinner && <div>Won: {turn === 'X' ? 'O' : 'X'}</div>}
-            <div className={cn(style.board, { hasWinner })}>
-              {board.map((value, index) => {
-                return (
-                  <button
-                    key={index}
-                    className={cn(style.square, {
-                      [style.isWinning]: hasWinner && lastGame.winner === value,
-                      [style.isSelected]: this.state.selected === index,
-                      [style.timesUp]: hasWinner,
-                    })}
-                    disabled={hasWinner}
-                    onClick={(event) => {
-                      this.handleClick(index)
-                    }}
-                  >
-                    {value}
-                  </button>
-                )
-              })}
-            </div>
-            <Footer hasWinner={hasWinner} handleRestart={this.handleRestart} />
-          </div>
-          <div className={style.timerContainer}>
-            {this.props.player2Name} is playing O
-            <Timer
-              key={gameId}
-              onTimerEnded={() => {
-                this.onTimerEnded('O')
-              }}
-              seconds={this.props.time}
-              increment={this.props.increment}
-              isRunning={!hasWinner && hasMoves && turn === 'O'}
-            />
-            games won: {oWonCount}
-          </div>
+      <div id={style.game}>
+        <div className={style.timerContainer}>
+          {this.props.player1Name} is playing X
+          <Timer
+            key={gameId}
+            onTimerEnded={() => {
+              this.onTimerEnded('X')
+            }}
+            seconds={this.props.time}
+            increment={this.props.increment}
+            isRunning={!hasWinner && hasMoves && turn === 'X'}
+          />
+          games won: {xWonCount}
         </div>
-      </Layout>
+        <div className={style.boardContainer}>
+          <Header totalMoves={totalMoves} />
+          {hasWinner && <div>Won: {turn === 'X' ? 'O' : 'X'}</div>}
+          <div className={cn(style.board, { hasWinner })}>
+            {board.map((value, index) => {
+              return (
+                <button
+                  key={index}
+                  className={cn(style.square, {
+                    [style.isWinning]: hasWinner && lastGame.winner === value,
+                    [style.isSelected]: this.state.selected === index,
+                    [style.timesUp]: hasWinner,
+                  })}
+                  disabled={hasWinner}
+                  onClick={(event) => {
+                    this.handleClick(index)
+                  }}
+                >
+                  {value}
+                </button>
+              )
+            })}
+          </div>
+          <Footer hasWinner={hasWinner} handleRestart={this.handleRestart} />
+        </div>
+        <div className={style.timerContainer}>
+          {this.props.player2Name} is playing O
+          <Timer
+            key={gameId}
+            onTimerEnded={() => {
+              this.onTimerEnded('O')
+            }}
+            seconds={this.props.time}
+            increment={this.props.increment}
+            isRunning={!hasWinner && hasMoves && turn === 'O'}
+          />
+          games won: {oWonCount}
+        </div>
+      </div>
     )
   }
 }
