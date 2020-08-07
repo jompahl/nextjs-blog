@@ -5,7 +5,10 @@ time: '20 min'
 pic: '/images/prisoners.jpg'
 ---
 
-Four prisoners are given the opportunity of release and freedom if just one of them can work out the answer to a simple logic riddle. However, if they take part and one of them gives a wrong answer, or none of them can work out the answer at all, then their sentences will be doubled.
+Four prisoners are given the opportunity of release and freedom if just one of them can work
+out the answer to a simple logic riddle. However, if they take part and one of them gives a
+wrong answer, or none of them can work out the answer at all, then their sentences will be
+doubled.
 
 They are told that there are four hats. Two white and two black. Each man will have a hat placed on his head while blindfolded. When each man is wearing a hat the blindfolds will be removed. The prisoners will not be able to see their own hats and the only way they can work out what colour hat they are wearing will be from looking at the hats the other prisoners are wearing. All they have to do to win their freedom is for one of them to work out what colour hat he is wearing.
 

@@ -3,6 +3,7 @@ title: 'Einsteins Riddle'
 date: '2020-07-20'
 time: '60 min'
 pic: '/images/einstein.jpg'
+answer: 'The german is the owner of the fish'
 ---
 
 1. There are 5 houses in five different colors.

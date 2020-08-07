@@ -29,7 +29,7 @@ const sideDrawer = (props) => {
           <Link href='/Settings'>Tic Tac Toe</Link>
         </li>
         <li>
-          <Link href='/Riddle'>GrabbGåta</Link>
+          <Link href='/Riddles'>Riddles</Link>
         </li>
         <li>
           <Link href='/SettingsGrabberMind'>Grabbermind</Link>

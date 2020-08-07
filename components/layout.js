@@ -14,7 +14,10 @@ export default function Layout({ children, home }) {
     <div style={{ height: '100%', width: '100%' }}>
       <Head>
         <link rel='icon' href='/favicon.ico' />
-
+        <link
+          rel='stylesheet'
+          href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css'
+        ></link>
         <meta
           name='description'
           content='Learn how to build a personal website using Next.js'
