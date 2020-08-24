@@ -34,7 +34,7 @@ class Navigation extends Component {
   render() {
     let sideDrawer
     let backdrop
-    console.log('heeeej')
+
     if (this.state.sideDrawerOpen) {
       sideDrawer = <SideDrawer />
       backdrop = <Backdrop click={this.backdropClickHandler} />

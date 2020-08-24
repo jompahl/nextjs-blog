@@ -4,11 +4,40 @@ import utilStyles from '../styles/utils.module.css'
 import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
+import styles from '../components/layout.module.css'
+import { AlignCenterIcon } from 'evergreen-ui'
+
+const name = 'Jompahl'
 
 export default function Home({ allPostsData }) {
   return (
-    <React.Fragment>
-      <Head>…</Head>
+    <div
+      style={{
+        display: 'flex',
+        justifyContent: 'center',
+        flexDirection: 'column',
+        alignContent: 'center',
+        alignItems: 'center',
+        padding: 20,
+      }}
+    >
+      <>
+        <Link href='/'>
+          <a>
+            <img
+              src='/images/profile.jpg'
+              className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+              alt={name}
+            />
+          </a>
+        </Link>
+        <h2 className={utilStyles.headingLg}>
+          <Link href='/'>
+            <a className={utilStyles.colorInherit}>{name}</a>
+          </Link>
+        </h2>
+      </>
+      {/* <Head>…</Head>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -25,8 +54,8 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section>
-    </React.Fragment>
+      </section> */}
+    </div>
   )
 }
 

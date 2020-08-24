@@ -3,7 +3,7 @@ import styles from './layout.module.css'
 import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Navigation from '../components/navigation'
-
+import SocialFollow from '../components/socialFollow'
 import Riddle from '../pages/Riddle'
 
 const name = 'Jompahl'
@@ -45,7 +45,7 @@ export default function Layout({ children, home }) {
         ) : (
           <React.Fragment></React.Fragment>
         )}
-        {/*<>
+        {/* <>
             <Link href='/'>
               <a>
                 <img
@@ -60,9 +60,12 @@ export default function Layout({ children, home }) {
                 <a className={utilStyles.colorInherit}>{name}</a>
               </Link>
             </h2>
-          </>*/}
+          </> */}
       </header>
       <main className={styles.main}>{children}</main>
+      <div className={styles.footer}>
+        <SocialFollow></SocialFollow>
+      </div>
       {/* {!home && (
         <div className={styles.backToHome}>
           <Link href='/'>
