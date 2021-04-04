@@ -63,9 +63,9 @@ export default function Layout({ children, home }) {
           </> */}
       </header>
       <main className={styles.main}>{children}</main>
-      <div className={styles.footer}>
+      {/* <div className={styles.footer}>
         <SocialFollow />
-      </div>
+      </div> */}
       {/* {!home && (
         <div className={styles.backToHome}>
           <Link href='/'>

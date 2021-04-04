@@ -5,24 +5,100 @@ import { getSortedPostsData } from '../lib/posts'
 import Link from 'next/link'
 import Date from '../components/date'
 import styles from '../components/layout.module.css'
-import { AlignCenterIcon } from 'evergreen-ui'
+import { AlignCenterIcon, DownloadIcon } from 'evergreen-ui'
+import React, { useState, useEffect } from 'react'
+import Card from '../components/Cards'
+import CardItem from '../components/CardItem'
 
 const name = 'Jompahl'
 
 export default function Home({ allPostsData }) {
+  const [offsetY, setOffsetY] = useState(0)
+
+  const handleScroll = () => setOffsetY(window.pageYOffset)
+
+  useEffect(() => {
+    window.addEventListener('scroll', handleScroll)
+
+    return () => window.removeEventListener('scroll', handleScroll)
+  }, [])
+
+  const renderContent = () => (
+    <>
+      <Link href='/'>
+        <a>
+          <img
+            src='/images/profile.jpg'
+            className={`${styles.headerImage} ${utilStyles.borderCircle}`}
+            alt={name}
+          />
+        </a>
+      </Link>
+      <div className={styles.experienceContainer}>
+        <p>
+          My first staggering steps after high school took me on a trip to
+          Afrika. I worked as a marketing and sales assistant at a taxi company.
+          I developed a salary system for SwedKen Tours using excel and my
+        </p>
+        <img src='/images/kenya.jpeg' className={styles.lifePics}></img>
+        <img src='/images/Equator.jpeg' className={styles.lifePics}></img>
+        <img src='/images/Kenya work.jpeg' className={styles.lifePics}></img>
+        <img
+          src='/images/mount longonot.jpeg'
+          className={styles.lifePics}
+        ></img>
+      </div>
+    </>
+  )
+
   return (
-    <div
-      style={{
-        display: 'flex',
-        justifyContent: 'center',
-        flexDirection: 'column',
-        alignContent: 'center',
-        alignItems: 'center',
-        padding: 20,
-      }}
-    >
-      <>
-        <Link href='/'>
+    <div>
+      <div className={styles.heroContainer}>
+        <video
+          className={styles.video}
+          src='/videos/spacevideo.mp4'
+          autoPlay
+          loop
+          muted
+        />
+        <h1>Jompahl</h1>
+        <p>Scroll down to get to know me</p>
+        <div className={styles.btnContainer}>
+          <button className={styles.btnOutline}>Projects</button>
+          <button className={styles.btn}>
+            Download CV
+            <DownloadIcon marginLeft={8} />
+          </button>
+        </div>
+        {/* <CardItems></CardItems> */}
+      </div>
+      <Card href='/' imgSrc='/images/kenya.jpeg'></Card>
+    </div>
+    // <section className={styles.parallax}>
+    //   <div
+    //     className={styles.background}
+    //     //  style={{ transform: `translateY(-${offsetY * 0.5}px)`}}
+    //   />
+    //   {/* <div
+    //     className={styles.background2}
+    //     style={{ transform: `translateY(-${offsetY * 0.8}px)`}}
+    //   /> */}
+    //   <div className={styles.experienceContainer}>{renderContent()}</div>
+    // </section>
+    // <div
+    //   className={styles.background}
+    //   style={{ transform: `translateY(-${offsetY * 0.5}px)`}}
+    //   // style={{
+    //   //   display: 'flex',
+    //   //   justifyContent: 'center',
+    //   //   flexDirection: 'column',
+    //   //   alignContent: 'center',
+    //   //   alignItems: 'center',
+    //   //   padding: 20,
+    //   // }}
+    // >{renderContent()}
+
+    /* <Link href='/'>
           <a>
             <img
               src='/images/profile.jpg'
@@ -31,13 +107,23 @@ export default function Home({ allPostsData }) {
             />
           </a>
         </Link>
-        <h2 className={utilStyles.headingLg}>
+        <div className={styles.experienceContainer}>
+          <p>My first staggering steps after high school took me on a trip to Afrika. 
+          I worked as a marketing and sales assistant at a taxi company. 
+          I developed a salary system for SwedKen Tours using excel and my
+          </p>
+          <img src='/images/kenya.jpeg' className={styles.lifePics}></img>
+          <img src='/images/Equator.jpeg' className={styles.lifePics}></img>
+          <img src='/images/Kenya work.jpeg' className={styles.lifePics}></img>
+          <img src='/images/mount longonot.jpeg' className={styles.lifePics}></img>
+        </div> */
+    /* <h2 className={utilStyles.headingLg}>
           <Link href='/'>
             <a className={utilStyles.colorInherit}>{name}</a>
           </Link>
-        </h2>
-      </>
-      {/* <Head>…</Head>
+        </h2> */
+
+    /* <Head>…</Head>
       <section className={utilStyles.headingMd}>…</section>
       <section className={`${utilStyles.headingMd} ${utilStyles.padding1px}`}>
         <h2 className={utilStyles.headingLg}>Blog</h2>
@@ -54,8 +140,8 @@ export default function Home({ allPostsData }) {
             </li>
           ))}
         </ul>
-      </section> */}
-    </div>
+      </section> */
+    //</div>
   )
 }
 

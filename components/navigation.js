@@ -50,8 +50,8 @@ class Navigation extends Component {
 
         <div className={navStyle.navigationButtons}>
           <Link href='/'>Start</Link>
-          <Link href='/Grabbar'>Grabbar</Link>
-          <Link href='/GrabbLiga'>GrabbLiga</Link>
+          {/* <Link href='/Grabbar'>Grabbar</Link>
+          <Link href='/GrabbLiga'>GrabbLiga</Link> */}
           <Link href='/Settings'>Tic Tac Toe</Link>
           <Link href='/Riddles'>Riddles</Link>
           <Link href='/SettingsGrabberMind'>Grabbermind</Link>
