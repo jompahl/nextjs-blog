@@ -65,10 +65,7 @@ export default function Home({ allPostsData }) {
         <p>Scroll down to get to know me</p>
         <div className={styles.btnContainer}>
           <button className={styles.btnOutline}>Projects</button>
-          <button className={styles.btn}>
-            Download CV
-            <DownloadIcon marginLeft={8} />
-          </button>
+          <button className={styles.btn}>Download CV</button>
         </div>
       </div>
       <Cards
