@@ -52,9 +52,8 @@ class Navigation extends Component {
           <Link href='/'>Start</Link>
           {/* <Link href='/Grabbar'>Grabbar</Link>
           <Link href='/GrabbLiga'>GrabbLiga</Link> */}
-          <Link href='/Settings'>Tic Tac Toe</Link>
           <Link href='/Riddles'>Riddles</Link>
-          <Link href='/SettingsGrabberMind'>Grabbermind</Link>
+          <Link href='/games'>Games</Link>
         </div>
         <SideDrawer show={this.state.sideDrawerOpen} />
         {backdrop}

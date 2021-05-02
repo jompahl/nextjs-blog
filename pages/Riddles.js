@@ -3,34 +3,32 @@ import utilStyles from '../styles/utils.module.css'
 import Link from 'next/link'
 import Date from '../components/date'
 import styles from '../components/layout.module.css'
+import Cards from '../components/Cards'
+import CardItem from '../components/CardItem'
 
 export default function Riddles({ allPostsData }) {
-  return (
-    <div className={utilStyles.riddlesContainer}>
-      {allPostsData.map(({ id, date, title, time, pic }) => (
-        <div className={utilStyles.listItem}>
-          <img
-            className={utilStyles.picture}
-            //style={{ height: 225, width: 400 }}
-            src={pic}
-            width='400'
-            height='225'
-            //className={`${styles.headerHomeImage} ${utilStyles.borderCircle}`}
-            //alt={name}
-          />
-          <div style={{ borderTop: '1px solid', height: '35%' }} key={id}>
-            <Link href='/posts/[id]' as={`/posts/${id}`}>
-              <a>{title}</a>
-            </Link>
-            <br />
-            <small className={utilStyles.lightText}>
-              <text>Needed time: {time}</text>
-            </small>
-          </div>
-        </div>
-      ))}
-    </div>
-  )
+  const array = [
+    {
+      src: allPostsData[0].pic,
+      text: allPostsData[0].title,
+      label: allPostsData[0].time,
+      href: '/posts/' + allPostsData[0].id,
+    },
+    {
+      src: allPostsData[1].pic,
+      text: allPostsData[1].title,
+      label: allPostsData[1].time,
+      href: '/posts/' + allPostsData[1].id,
+    },
+    {
+      src: allPostsData[2].pic,
+      text: allPostsData[2].title,
+      label: allPostsData[2].time,
+      href: '/posts/' + allPostsData[2].id,
+    },
+  ]
+
+  return <Cards cards={array}></Cards>
 }
 
 export async function getStaticProps() {

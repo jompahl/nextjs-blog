@@ -7,7 +7,7 @@ import Date from '../components/date'
 import styles from '../components/layout.module.css'
 import { AlignCenterIcon, DownloadIcon } from 'evergreen-ui'
 import React, { useState, useEffect } from 'react'
-import Card from '../components/Cards'
+import Cards from '../components/Cards'
 import CardItem from '../components/CardItem'
 
 const name = 'Jompahl'
@@ -70,9 +70,41 @@ export default function Home({ allPostsData }) {
             <DownloadIcon marginLeft={8} />
           </button>
         </div>
-        {/* <CardItems></CardItems> */}
       </div>
-      <Card href='/' imgSrc='/images/kenya.jpeg'></Card>
+      <Cards
+        cards={[
+          {
+            src: '/images/Flying.jpeg',
+            text: 'Jompahl',
+            label: 'Java',
+            href: '/',
+          },
+          {
+            src: '/images/kenya.jpeg',
+            text: 'Jompahl',
+            label: 'C#',
+            href: '/',
+          },
+          {
+            src: '/images/Helikopter.jpeg',
+            text: 'Jompahl',
+            label: 'React, JavaScript',
+            href: '/',
+          },
+          {
+            src: '/images/einstein.jpg',
+            text: 'Jompahl',
+            label: 'React',
+            href: '/',
+          },
+          {
+            src: '/images/kenya.jpeg',
+            text: 'Jompahl',
+            label: 'CSS',
+            href: '/',
+          },
+        ]}
+      />
     </div>
     // <section className={styles.parallax}>
     //   <div
