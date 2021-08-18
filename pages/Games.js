@@ -20,6 +20,12 @@ class Games extends Component {
             label: 'Strategy',
             href: '/Settings',
           },
+          {
+            src: '/',
+            text: 'GuessIt',
+            label: 'Questions',
+            href: '/SettingsGuessIt',
+          },
         ]}
       ></Cards>
     )

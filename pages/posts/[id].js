@@ -18,7 +18,9 @@ export default function Post({ postData }) {
           <div>
             You can make your own Einstein riddle, click the link below!
           </div>
-          <Link href='/Riddle'>Click here to make your own!</Link>
+          <Link href='/Riddle'>
+            <a>Click here to make your own!</a>
+          </Link>
         </div>
       )
     }
