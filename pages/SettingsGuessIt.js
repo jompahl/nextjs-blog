@@ -9,7 +9,12 @@ class SettingsGuessIt extends Component {
     super(props)
     this.state = {
       nbrOfPlayers: 2,
-      players: ['Jompahl', 'Henrik', 'Erik', 'Klara'],
+      players: [
+        { name: 'Jompahl', points: 0 },
+        { name: 'Henrik', points: 0 },
+        { name: 'Erik', points: 0 },
+        { name: 'Klara', points: 0 },
+      ],
       didstart: false,
       points: 10,
       playerNameError: '',
@@ -87,7 +92,7 @@ class SettingsGuessIt extends Component {
 
           {Array.from({ length: this.state.nbrOfPlayers }, (key, index) => (
             <TextInputField
-              id={index}
+              key={index}
               label={'Player ' + (index + 1)}
               placeholder='Player name'
               required

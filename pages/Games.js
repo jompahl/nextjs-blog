@@ -9,19 +9,19 @@ class Games extends Component {
       <Cards
         cards={[
           {
-            src: '/images/Mastermind5.png',
+            src: '/images/mastermind.png',
             text: 'Mastermind',
             label: 'Strategy',
             href: '/SettingsGrabberMind',
           },
           {
-            src: '/images/Tictactoe.png',
+            src: '/images/tictactoe2.png',
             text: 'Tic Tac Toe',
             label: 'Strategy',
             href: '/Settings',
           },
           {
-            src: '/',
+            src: '/images/guessIt.png',
             text: 'GuessIt',
             label: 'Questions',
             href: '/SettingsGuessIt',
